@@ -1,56 +1,38 @@
 #include <stdio.h>
-#include <string.h>
 
 // Definindo constantes para os movimentos das peças
 #define MOVIMENTO_BISPO 5
 #define MOVIMENTO_TORRE 5
 #define MOVIMENTO_RAINHA 8
 
-// Função para mover o bispo
-void moverBispo() {
-    printf("Movendo o Bispo:\n");
+int main() {
+    // Movimentação do Bispo: 5 casas na diagonal superior direita
+    printf("Movimentação do Bispo:\n");
+    
+    // Usando loop for para o movimento do bispo
     for (int i = 0; i < MOVIMENTO_BISPO; i++) {
         printf("Cima, Direita\n");
     }
-}
 
-// Função para mover a torre
-void moverTorre() {
-    printf("Movendo a Torre:\n");
+    // Movimentação da Torre: 5 casas para a direita
+    printf("\nMovimentação da Torre:\n");
+
+    // Usando loop while para o movimento da torre
     int j = 0;
     while (j < MOVIMENTO_TORRE) {
         printf("Direita\n");
         j++;
     }
-}
 
-// Função para mover a rainha
-void moverRainha() {
-    printf("Movendo a Rainha:\n");
+    // Movimentação da Rainha: 8 casas para a esquerda
+    printf("\nMovimentação da Rainha:\n");
+
+    // Usando loop do-while para o movimento da rainha
     int k = 0;
     do {
         printf("Esquerda\n");
         k++;
     } while (k < MOVIMENTO_RAINHA);
-}
-
-int main() {
-    char escolha[10];
-
-    // Instruções para o jogador
-    printf("Escolha uma peça para mover (bispo, torre, rainha): ");
-    scanf("%s", escolha);
-
-    // Verifica a escolha do jogador e chama a função correspondente
-    if (strcmp(escolha, "bispo") == 0) {
-        moverBispo();
-    } else if (strcmp(escolha, "torre") == 0) {
-        moverTorre();
-    } else if (strcmp(escolha, "rainha") == 0) {
-        moverRainha();
-    } else {
-        printf("Escolha inválida! Por favor, escolha entre bispo, torre ou rainha.\n");
-    }
 
     return 0;
 }
